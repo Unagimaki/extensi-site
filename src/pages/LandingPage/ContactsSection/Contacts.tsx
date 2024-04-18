@@ -20,15 +20,24 @@ export const ContactsSection: React.FC = () => {
   const [value, setValue] = useState<string>("")
   const [isSend, setIsSend] = useState<boolean>(false)
   const [isLoaderVisible, setIsLoaderVisible] = useState<boolean>(false)
+  const [isValidEmail, setIsValidEmail] = useState<boolean>(true)
   
   const [userForm, setUserForm] = useState<userForm>({
     email: '',
     message: ''
   })
 
+  const validateEmail = (email: string) => {
+    return String(email)
+      .toLowerCase()
+      .match(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      );
+  };
+
   const onSubmit = async (e: FormData) => {
     if (!userForm.email) {
-      setUserForm({email: value, message: ''})
+      validateEmail(value) ? (setUserForm({email: value, message: ''}), setIsValidEmail(true)) : setIsValidEmail(false)
     } else {
       setIsLoaderVisible(true)
       try {
@@ -40,17 +49,6 @@ export const ContactsSection: React.FC = () => {
       } catch (error) { }
     }  
     setValue('')
-  }
-
-
-  const setPlaceholder = () => {
-    if (!userForm.email) {
-      return 'Введите email'
-    } else if (!userForm.message && userForm.email) {
-      return 'Введите сообщение'
-    } else if (userForm.email && userForm.message) {
-      return 'Спасибо, мы вернемся к вам позже'
-    }
   }
   
   return (
@@ -68,8 +66,11 @@ export const ContactsSection: React.FC = () => {
         </div>
       </div>
       <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
+
+        <div className={isValidEmail ? classes.email_alert_hidden : classes.email_alert}>Введите корректный email</div>
+
         <input
-          placeholder={setPlaceholder()}
+          placeholder={!userForm.email ? 'Введите email' : !userForm.message ? 'Введите сообщение' : 'Спасибо, мы вернемся к вам позже'}
           type="text"
           className={classes.input}
           onChange={(e)=>{ setValue(e.target.value), userForm.email && setUserForm({...userForm, message: e.target.value}) }}

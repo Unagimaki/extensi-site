@@ -47,8 +47,8 @@ export const NewsSection: FC<NewsSectionProps> = ({ news }) => {
 
           <div className={classes.news_item_side}>
             <div className={classes.news_item}>
-              <div className={classes.news_title}> { news[3].title } </div>
-              <div className={classes.news_text}> { news[3].subtitle } </div>
+              <div className={classes.news_title}> { news[news.length-1].title } </div>
+              <div className={classes.news_text}> { news[news.length-1].subtitle } </div>
             </div>
 
             <div className={classes.image_container}/>

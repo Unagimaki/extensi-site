@@ -19,14 +19,14 @@ export const news = [
     },
     {
       id: 4,
-      title: "Кейс. ORBY",
-      subtitle: "ORBYLAND в метавселенной и продвижение капсульной коллекции для геймеров",
+      title: "Кейс. СберКарта",
+      subtitle: "Построили настоящую СберКарту в Minecraft вместе с топовыми блогерами!",
       image: "https://extensi-landing-new.vercel.app/images/Pic2.png"
     },
     {
       id: 5,
-      title: "Кейс. СберКарта",
-      subtitle: "Построили настоящую СберКарту в Minecraft вместе с топовыми блогерами!",
+      title: "Кейс. ORBY",
+      subtitle: "ORBYLAND в метавселенной и продвижение капсульной коллекции для геймеров",
       image: "https://extensi-landing-new.vercel.app/images/Pic2.png"
     },
     {

@@ -87,3 +87,12 @@
   font-size: min(1.39vw, 20px);
   font-weight: $fw-bold;
 }
+.email_alert_hidden {
+  display: none;
+}
+.email_alert {
+  position: absolute;
+  color: red;
+  bottom: -40%;
+  font-size: min(1.39vw, 20px);
+}
