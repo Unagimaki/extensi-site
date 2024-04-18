@@ -1,0 +1,31 @@
+@use 'styles' as *;
+
+.header {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  z-index: $z-index-layout;
+  position: relative;
+}
+
+.logoPosition {
+  position: fixed;
+  z-index: 999 !important;
+  width: 76px;
+  @include mobile {
+    width: 38px;
+  }
+
+  @include tablet {
+    width: 38px;
+  }
+
+  @include big-tablet {
+    width: 45px;
+  }
+
+  @include laptop {
+    width: 76px;
+    height: 76px;
+  }
+}

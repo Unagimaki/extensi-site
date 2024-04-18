@@ -1,0 +1,73 @@
+@use 'styles' as *;
+
+.wrapper_hidden {
+    background-color: #EB52BF;
+    animation: hidden-wrapper .5s forwards;
+    padding: min(5.56vw, 80px) 0;
+}
+
+.wrapper {
+    display: block;
+    background-color: #EB52BF;
+    padding: min(5.56vw, 80px) 0;
+    animation: wrapper 1s;
+}
+
+@keyframes hidden-wrapper {
+    0% { padding: min(5.56vw, 80px) 0; opacity: 1; }
+    100% { padding: 0; opacity: 0; }
+
+}
+@keyframes wrapper {
+    0% { padding: 0; opacity: 0; }
+    100% { padding: min(5.56vw, 80px) 0; opacity: 1; }
+}
+
+.container_hidden {
+    width: min(74.72vw, 1076px);
+    margin: 0 auto;
+    font-weight: $fw-bold;
+    letter-spacing: -1px;
+    font-size: min(1.39vw, 20px);
+    text-align: justify;
+    animation: container .5s;
+    line-height: 1;
+    animation: hidden .5s forwards;
+}
+
+@keyframes hidden {
+    0% { opacity: 1; line-height: 1; }
+    100% { opacity: 0; line-height: 0; }
+}
+
+
+
+.container {
+    width: min(74.72vw, 1076px);
+    margin: 0 auto;
+    font-weight: $fw-bold;
+    letter-spacing: -1px;
+    font-size: min(1.39vw, 20px);
+    text-align: justify;
+    animation: container .5s;
+    line-height: 1;
+}
+.container div {
+    opacity: 0;
+    animation: text .5s forwards;
+}
+.first_paragraph {
+    padding-left: min(27.5vw, 396px);
+}
+.last_paragraph {
+    width: min(57.85vw, 833px);
+}
+
+@keyframes container {
+    0% { line-height: 0; }
+    100% { line-height: 1; }
+}
+@keyframes text {
+    0% { opacity: 0; } 
+    100% { opacity: 1; }
+}

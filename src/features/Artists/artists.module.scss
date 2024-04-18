@@ -1,0 +1,111 @@
+@use 'styles' as *;
+
+.team {
+  overflow-x: hidden;
+  overflow: initial;
+  font-family: $font-ObjectSans;
+  position: relative;
+  margin-bottom: min(6.94vw, 100px);
+}
+
+.title_container {
+  width: 100%;
+  background-color: $color-black;
+  text-align: center;
+  text-align: left;
+}
+.title {
+  color: #FAFB6F;
+  font-weight: 800;
+  line-height: 75%;
+  font-size: min(9.72vw, 140px);
+  letter-spacing: -4.2px;
+  max-width: 1400px;
+  margin-bottom: -0.5px;
+}
+
+.list_container {
+  padding: 57px 17px 20px 17px;
+  background: linear-gradient(0deg, $color-white, #FAFB6F 100%);
+  padding-top: min(19.03vw, 274px);
+}
+
+.image_container {
+  position: relative;
+  height: 100%;
+  z-index: 10;
+}
+.image {
+  position: absolute;
+  top: -20vw;
+  right: 0vw;
+  width: min(37.08vw, 534px);
+  height: auto;
+}
+
+
+.list {
+  max-width: 1400px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.item {
+  width: 100%;
+  padding: 24px 0;
+  display: flex;
+  height: 24px;
+  align-items: center;
+  position: relative;
+  height: min(6.36vw, 89px)
+}
+.item:not(:last-child) {
+  border-bottom: min(0.07vw, 1px) solid black;
+}
+.number {
+  font-weight: $fw-regular;
+  font-size: min(1.67vw, 24px);
+
+}
+
+.number,
+.name {
+  position: absolute;
+}
+.name {
+  font-size: 2.78vw;
+  font-weight: $fw-bold;
+}
+.left_center {
+  left: min(25.93vw, 363px);
+}
+.right_center {
+  left: min(44.21vw, 619px);
+}
+.left {
+  left: 0vw;
+}
+.right_name {
+  right: min(3.93vw, 55px);
+}
+.right {
+  right: 0vw;
+}
+.right_number {
+  right: min(18.71vw, 262px);
+}
+.left_number {
+  left: min(17.43vw, 244px);
+}
+.center_number {
+  left: min(44.21vw, 619px);
+}
+.none {
+  display: none;
+}
+
+.button {
+  position: absolute;
+  bottom: -4%;
+  right: 23%;
+}

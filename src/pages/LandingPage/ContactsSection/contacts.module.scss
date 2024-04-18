@@ -1,0 +1,89 @@
+@use "styles" as *;
+
+.contacts {
+  padding: 60px 20px;
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.loader_container {
+  width: min(3.47vw, 50px);
+  position: absolute;
+  right: 17%;
+  top: 19%;
+}
+.loader_container img {
+  width: min(3.47vw, 50px);
+}
+.loader_done {
+  position: absolute;
+  right: 17%;
+  top: 26%;
+  animation: opacity 1s linear;
+}
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.loader_done img {
+  width: min(3.47vw, 50px);
+}
+
+.stroke_wrapper {
+  margin-bottom: min(3.43vw, 49.39px);
+  position: relative;
+}
+
+.stroke_container {
+  font-size: min(2.78vw, 40px);
+  font-weight: $fw-bold;
+}
+.stroke_first {
+  margin-left: min(7.9vw, 113.76px);
+}
+.stroke_last {
+  margin-left: min(11vw, 158.4px);
+}
+
+
+.image_container {
+  position: absolute;
+  top: -289%;
+  left: 2.3%;
+  width: min(18.81vw, 270.86px);
+}
+.image {
+  width: 100%;
+}
+
+.form {
+  height: min(5.63vw, 81px);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: min(86.88vw, 1251px);
+}
+.input {
+  width: 85%;
+  height: 100%;
+  border: min(0.14vw, 2px) solid black;
+  padding-top: min(0.2vw, 2.88px);
+  padding-left: min(2.99vw, 43px);
+  border-radius: 200px;
+  font-family: $font-ObjectSans;
+
+}
+.input::placeholder {
+  font-family: $font-ObjectSans;
+  font-weight: $fw-regular;
+  letter-spacing: -13%;
+  font-size: min(1.39vw, 20px);
+  font-weight: $fw-bold;
+}

@@ -1,0 +1,14 @@
+.container {
+    height: min(3.47vw, 50px);
+    aspect-ratio: 1;
+    border: min(0.35vw, 5px) solid rgb(102, 102, 102);
+    border-left-color: rgb(29, 29, 29);
+    border-radius: 50%;
+    animation: loader 1s linear infinite;
+}
+
+@keyframes loader {
+    100% {
+        rotate: 360deg;
+    }
+}

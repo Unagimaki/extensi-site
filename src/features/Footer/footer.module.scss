@@ -1,0 +1,30 @@
+.footer,
+.container {
+  display: flex;
+}
+.footer {
+  background-color: #000;
+  height: min(12.5vw, 180px);
+  justify-content: center;
+}
+.container {
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: min(1.39vw, 20px);
+  padding-right: min(2.69vw, 38.8px);
+  font-size: min(3.47vw, 50px);
+}
+.title {
+  color: #DCD6DA;
+}
+.mail {
+  color: #16F1BB;
+}
+.image_container {
+  width: min(8.83vw, 127.14px);
+  height: min(7.57vw, 109px);
+}
+.image {
+  width: 100%;
+}
