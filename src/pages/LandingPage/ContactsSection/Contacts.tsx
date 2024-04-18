@@ -38,7 +38,7 @@ export const ContactsSection: React.FC = () => {
   const onSubmit = async (e: FormData) => {
     if (!userForm.email) {
       validateEmail(value) ? (setUserForm({email: value, message: ''}), setIsValidEmail(true)) : setIsValidEmail(false)
-    } else {
+    } else if (userForm.message) {
       setIsLoaderVisible(true)
       try {
         const response = await axios.post('https://us-central1-gpt-telegram-8ab7d.cloudfunctions.net/notifications/sendFeedbackFromLanding', {
@@ -74,7 +74,7 @@ export const ContactsSection: React.FC = () => {
           type="text"
           className={classes.input}
           onChange={(e)=>{ setValue(e.target.value), userForm.email && setUserForm({...userForm, message: e.target.value}) }}
-          style={{fontSize: '15px'}}
+          style={{fontSize: '20px'}}
           value={value}
         />
         {
