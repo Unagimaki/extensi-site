@@ -61,7 +61,7 @@ const Frame: FC<FrameProps> = memo(
         return setRotation(() => [0, 0, 0]);
       }
       if (clicked && rotation[1] > -2.99) {
-        setRotation(() => [0, rotation[1] - 0.08, 0]);
+        setTimeout(() => {setRotation(() => [0, rotation[1] - 0.08, 0])}, 1000)        
       }
     }, [clicked, isActive, rotation]);
 
