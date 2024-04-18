@@ -37,6 +37,7 @@ const Frame: FC<FrameProps> = memo(
     const frame = useRef<any>(null);
 
     const galleryDatas = useAppSelector((state) => state.gallery);
+    
     const [rotation, setRotation] = useState<[number, number, number]>([
       0,
       0,
@@ -68,20 +69,14 @@ const Frame: FC<FrameProps> = memo(
       if (image.current) {
         const imageWidth = image.current.visible;
         const imageHeight = image.current.userData.height;
-        // const aspectRatio = imageWidth / imageHeight;
-
-        // Устанавливаем размеры карточки в соответствии с размерами изображения
-        // frame.current.scale.set(imageWidth, imageHeight, 0.05);
-
-        // console.log(imageWidth , imageHeight)
         rotationFunc();
         easing.damp3(image?.current?.scale, [1.4, 1, 1], 0.15, dt);
         easing.damp3(frame?.current?.scale, [1.4, 1, 0.9], 0.15, dt);
-        // easing.damp3(image?.current?.scale, [1.618, 1, 1], 0.15, dt);
       }
     });
 
     useEffect(() => {
+      setClicked(true)
       const func = () => {
         if (!isActive) {
           return setClicked(() => false);
@@ -89,6 +84,7 @@ const Frame: FC<FrameProps> = memo(
         return setRotation(() => [0, 0, 0]);
       };
       return () => func();
+
     }, [isActive, setClicked, clicked]);
 
     const { left, center, right } = splitArray(gallery);
