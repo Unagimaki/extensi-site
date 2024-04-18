@@ -73,7 +73,7 @@ export const ContactsSection: React.FC = () => {
           type="text"
           className={classes.input}
           onChange={(e)=>{ setValue(e.target.value), userForm.email && setUserForm({...userForm, message: e.target.value}) }}
-          style={{fontSize: '14px'}}
+          style={{fontSize: '15px'}}
           value={value}
         />
         {
