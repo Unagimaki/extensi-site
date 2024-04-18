@@ -22,14 +22,15 @@ export const GalleryPage = () => {
     <div className={classes.wrapper}>
       <div className={classes.container}>
 
+
+
+        <div className={classes.header}>
         <div className={classes.text}>
           Реклама, лидеры мнений, современное искусство, стриминговые платформы, виртуальная реальность, медиа, свобода, киберспорт, контент, геймификация, цифровое искусство, метавселенные, дизайн, CG, motion, продвижение, разработка
         </div>
         <div className={classes.text}>
           Мода, стиль, технологии, влияние, тренды, самовыражение, культура, диджитал, индивидуальность, сообщество, творчество, музыка, вдохновение, бренды, креатив
         </div>
-
-        <div className={classes.header}>
           <h1 className={classes.title}>Галерея</h1>
           <h2 className={classes.subTitle}>
             Знакомимся ближе
