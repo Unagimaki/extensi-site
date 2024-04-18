@@ -37,7 +37,7 @@
 }
 .image {
   position: absolute;
-  top: -20vw;
+  top: max(-20vw, -288px);
   right: 0vw;
   width: min(37.08vw, 534px);
   height: auto;
