@@ -54,7 +54,6 @@ const Frame: FC<FrameProps> = memo(
 
     const name = getUuid(`${gallery?.[index]?.id}`);
     const isActive = galleryDatas.id === name;
-    const text = gallery?.[index - 1]?.name;
 
     const rotationFunc = useCallback(() => {
       if (!isActive || !clicked) {
@@ -67,8 +66,6 @@ const Frame: FC<FrameProps> = memo(
 
     useFrame((state, dt) => {
       if (image.current) {
-        const imageWidth = image.current.visible;
-        const imageHeight = image.current.userData.height;
         rotationFunc();
         easing.damp3(image?.current?.scale, [1.4, 1, 1], 0.15, dt);
         easing.damp3(frame?.current?.scale, [1.4, 1, 0.9], 0.15, dt);
