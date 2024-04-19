@@ -6,6 +6,11 @@
   font-family: $font-ObjectSans;
   position: relative;
 }
+@media (min-width: 530px) {
+  .team {
+    margin-bottom: min(5vw, 72px);
+  }
+}
 
 .title_container {
   width: 100%;
@@ -107,4 +112,16 @@
   position: absolute;
   bottom: -4%;
   right: 23%;
+}
+
+
+@media (max-width: 425px) {
+  .name {
+    font-size: 3.5vw;
+  }
+}
+@media (max-width: 320px) {
+  .name {
+    font-size: 4.5vw;
+  }
 }

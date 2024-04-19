@@ -1,6 +1,6 @@
-import { Button } from 'components'
 import classes from './TeamGallerySection.module.scss'
 import { useRouter } from 'next/router'
+import { MyButton } from 'components/myButton/myButton'
 
 const TeamGallerySection = () => {
     const router = useRouter()
@@ -23,9 +23,7 @@ const TeamGallerySection = () => {
                 </div>
     
             </div>
-                <div className={classes.button_container}>
-                <Button withArrowIcon={true} variant='black' onClick={() => router.push('./gallery')}/>
-            </div>
+                <MyButton classNames={classes.button} withArrowIcon onClick={() => router.push('./gallery')}/>
         </section>
     )
 }

@@ -63,15 +63,14 @@
 
 .form {
   height: min(5.63vw, 81px);
-
+  width: 96%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
-  width: min(86.88vw, 1251px);
 }
 .input {
-  width: 85%;
+  width: 90%;
   height: 100%;
   border: min(0.14vw, 2px) solid black;
   padding-top: min(0.2vw, 2.88px);
@@ -96,10 +95,17 @@
   bottom: -40%;
   font-size: min(1.39vw, 20px);
 }
+.button {
+  right: 0%;
+}
 
-@media (max-width: 500px) {
+@media (max-width: 530px) {
   .input::placeholder {
     font-size: 2.39vw;
+  }
+  .email_alert {
+    bottom: -50%;
+    font-size: 2vw;
   }
 }
 @media (max-width: 500px) {

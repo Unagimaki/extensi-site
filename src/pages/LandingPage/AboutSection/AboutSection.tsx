@@ -5,7 +5,6 @@ import {
   Suspense,
   useEffect,
   useRef,
-  useState,
 } from 'react'
 import cn from 'classnames'
 
@@ -14,8 +13,8 @@ import { Canvas } from '@react-three/fiber'
 import { Environment, Preload, useProgress } from '@react-three/drei'
 import CameraRig from './ThreeDElements/CameraRig'
 import ThreeDImages from './ThreeDElements/ThreeDImages'
-import { Button } from 'components'
 import { useWindowDimensions } from 'shared/hooks/useWindowDimensions'
+import { MyButton } from 'components/myButton/myButton'
 
 export interface AboutSectionProps {
   classNames?: string
@@ -94,11 +93,12 @@ export const AboutSection: FC<AboutSectionProps> = ({
           <div className={s.stroke}>диджитал</div>
           <div className={s.stroke}>решения</div>
         </div>
-          <Button
+          {/* <Button
             variant='black'
             classNames={s.button}
             onClick={changeVisible}
-          />
+          /> */}
+            <MyButton classNames={s.button} onClick={changeVisible}/>
       </div>
     </div>
   )

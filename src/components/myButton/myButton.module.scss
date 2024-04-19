@@ -1,0 +1,32 @@
+.button, .decor {
+    background-color: #000;
+    border-radius: 50%;
+    aspect-ratio: 1;
+}
+.button {
+    height: min(6.25vw, 90px);
+    border: none;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover {
+        opacity: .7;
+    }
+}
+
+.decor {
+    position: absolute;
+    height: 66.67%;
+    top: -20%;
+    right: -30%;
+}
+.icon {
+    width: 50%;
+    height: auto;
+}
+@media (max-width: 425px) {
+    .icon {
+        width: 70%;
+    }
+}
