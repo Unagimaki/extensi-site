@@ -76,8 +76,7 @@ const Frame: FC<FrameProps> = memo(
     });
 
     useEffect(() => {
-      setTimeout(() => setClicked(true), 1500)
-      
+      setClicked(true)      
       const func = () => {
         if (!isActive) {
           return setClicked(() => false);
