@@ -1,10 +1,10 @@
 .button, .decor {
     background-color: #000;
     border-radius: 50%;
-    aspect-ratio: 1;
 }
 .button {
     height: min(6.25vw, 90px);
+    width: min(6.25vw, 90px);
     border: none;
     position: absolute;
     display: flex;
@@ -15,6 +15,7 @@
 .decor {
     position: absolute;
     height: 66.67%;
+    width: 66.67%;
     top: -20%;
     right: -30%;
 }
