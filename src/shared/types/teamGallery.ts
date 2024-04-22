@@ -1,4 +1,4 @@
 export interface TeamGallery {
-    src: string | null
+    src: string 
     id: number
 }

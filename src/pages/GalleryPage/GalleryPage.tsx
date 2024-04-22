@@ -1,34 +1,54 @@
+import { MyButton } from 'components/myButton/myButton';
 import classes from './galleryPage.module.scss'
-import { Button } from 'components'
 import { teamGallery } from 'data/teamGallery';
+import { teamGalleryMobile } from 'data/teamGallery-mobile';
 import { useEffect, useState } from 'react'
+import { TeamGallery } from 'shared/types/teamGallery';
 
 
 export const GalleryPage = () => {
-  const [windiwWidth, setWindowWidth] = useState<boolean>(false);
+  const [windowWidth, setWindowWidth] = useState<boolean>(false);
+  const [currentIndex, setCurrentIndex] = useState<number>(1)
+  const [mobileArr, setMobileArr] = useState<TeamGallery[]>(teamGalleryMobile)
 
+  const filteredMobileImages = () => {
+    setMobileArr(teamGalleryMobile.slice(
+      (currentIndex === 1)? 0 : (currentIndex === 2)? 5 : 10,
+      (currentIndex === 1)? 5 : (currentIndex === 2)? 10 : 15
+    ))
+  }
+  const changeCurrentIndex = () => { setCurrentIndex(currentIndex === 1 ? 2 : currentIndex === 2 ? 3 : 1) }
+  
+  const calcStyle = (id: number) => {
+    let width = '44.69vw'
+    if (currentIndex === 1) {
+      width = (id === 1 || id === 2 || id === 3 ? '39.69vw' : '47.19vw')
+    } else if (currentIndex === 2) {
+      width = (id === 6 || id === 7 ? '46.56vw' : '38.75vw')
+    }
+    return width
+  }
   useEffect(() => {
-    setWindowWidth(window.innerWidth <= 425);
+    filteredMobileImages()
+    setWindowWidth(window.innerWidth <= 320)
     const handleResize = () => {
-      setWindowWidth(window.innerWidth <= 425);
+      setWindowWidth(window.innerWidth <= 320)
+      filteredMobileImages()
     }
-    window.addEventListener('resize', handleResize);
+    window.addEventListener('resize', handleResize)
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('resize', handleResize)
     }
-  }, []);
+  }, [windowWidth, currentIndex]);
 
   return (
     <div className={classes.wrapper}>
       <div className={classes.container}>
-
-
-
         <div className={classes.header}>
-        <div className={classes.text}>
+        <div className={currentIndex !== 2 ? classes.text : classes.hidden}>
           Реклама, лидеры мнений, современное искусство, стриминговые платформы, виртуальная реальность, медиа, свобода, киберспорт, контент, геймификация, цифровое искусство, метавселенные, дизайн, CG, motion, продвижение, разработка
         </div>
-        <div className={classes.text}>
+        <div className={currentIndex === 2 ? classes.text : classes.hidden}>
           Мода, стиль, технологии, влияние, тренды, самовыражение, культура, диджитал, индивидуальность, сообщество, творчество, музыка, вдохновение, бренды, креатив
         </div>
           <h1 className={classes.title}>Галерея</h1>
@@ -37,29 +57,26 @@ export const GalleryPage = () => {
           </h2>
         </div>
 
-        <div className={windiwWidth ? classes.images_column : classes.images_container}>
+        <div className={classes.images_container}>
             {
+              windowWidth ? 
+              mobileArr.map((item: TeamGallery, index) => {               
+                return( <img style={{width: `${calcStyle(item.id)}`}} key={item.id} src={item.src}/> )
+              })
+              :
+
               teamGallery.map(item => { 
                 return(
-                  <div className={!windiwWidth ? classes.image_container : classes.image_column} key={item.id}>
+                  <div className={classes.image_container} key={item.id}>
                     {
-                      !windiwWidth && item.src ?
-                      ( <img src={item.src} alt='image' className={classes.image} />) : !windiwWidth && !item.src ?
-                      ( <div className={classes.image} style={{backgroundColor: '#fff'}}/> ) : windiwWidth && item.src ?
-                      ( <img src={item.src} alt='image' className={classes.image} />) : null
+                      ( <img src={item.src} alt='image' className={classes.image} />)
                     }
                   </div>
                 ) 
               })
             }
+            <MyButton classNames={classes.button} onClick={changeCurrentIndex}/>
           </div>
-
-        <div className={classes.button_container}>
-          {/* <Button
-            variant='black'
-          /> */}
-        </div>
-
       </div>
     </div>
   )
