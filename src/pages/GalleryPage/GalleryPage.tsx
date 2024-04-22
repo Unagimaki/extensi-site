@@ -30,9 +30,9 @@ export const GalleryPage = () => {
   }
   useEffect(() => {
     filteredMobileImages()
-    setWindowWidth(window.innerWidth <= 320)
+    setWindowWidth(window.innerWidth <= 425)
     const handleResize = () => {
-      setWindowWidth(window.innerWidth <= 320)
+      setWindowWidth(window.innerWidth <= 425)
       filteredMobileImages()
     }
     window.addEventListener('resize', handleResize)
@@ -45,10 +45,10 @@ export const GalleryPage = () => {
     <div className={classes.wrapper}>
       <div className={classes.container}>
         <div className={classes.header}>
-        <div className={currentIndex !== 2 ? classes.text : classes.hidden}>
+        <div className={windowWidth && currentIndex == 2 ? classes.hidden : classes.text}>
           Реклама, лидеры мнений, современное искусство, стриминговые платформы, виртуальная реальность, медиа, свобода, киберспорт, контент, геймификация, цифровое искусство, метавселенные, дизайн, CG, motion, продвижение, разработка
         </div>
-        <div className={currentIndex === 2 ? classes.text : classes.hidden}>
+        <div className={windowWidth && currentIndex !== 2 ? classes.hidden : classes.text}>
           Мода, стиль, технологии, влияние, тренды, самовыражение, культура, диджитал, индивидуальность, сообщество, творчество, музыка, вдохновение, бренды, креатив
         </div>
           <h1 className={classes.title}>Галерея</h1>
