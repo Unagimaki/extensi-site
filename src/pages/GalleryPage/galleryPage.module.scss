@@ -165,6 +165,14 @@
 }
 .button {
   position: absolute;
-  bottom: 11.25vw;
-  right: 5vw;
+  bottom: -9.75vw;
+  right: 46vw;
 }
+@media (max-width: 425px) {
+  .button {
+    position: absolute;
+    bottom: 11.25vw;
+    right: 5vw;
+  }
+}
+
