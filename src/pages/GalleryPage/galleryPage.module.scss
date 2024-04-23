@@ -42,7 +42,7 @@
   padding-bottom: min(25.28vw, 364px);
 }
 .title {
-  position: r elative;
+  position: relative;
   margin-bottom: min(3.47vw, 50px);
   line-height: 1;
   font-size: min(9.72vw, 140px);
@@ -118,7 +118,8 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    width: 100%;
+    align-content: center;
+    align-items: normal;
     height: 132.19vw;
     gap: 1.56vw;
   }
