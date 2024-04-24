@@ -30,9 +30,9 @@ export const GalleryPage = () => {
   }
   useEffect(() => {
     filteredMobileImages()
-    setWindowWidth(window.innerWidth <= 425)
+    setWindowWidth(window.innerWidth <= 450)
     const handleResize = () => {
-      setWindowWidth(window.innerWidth <= 425)
+      setWindowWidth(window.innerWidth <= 450)
       filteredMobileImages()
     }
     window.addEventListener('resize', handleResize)

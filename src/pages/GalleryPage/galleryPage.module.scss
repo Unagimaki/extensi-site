@@ -76,7 +76,7 @@
     width: 22.27vw;
   }
 }
-@media (max-width: 425px) {
+@media (max-width: 450px) {
   .text:nth-child(1) {
     font-size: 2.5vw;
     width: 34.69vw;
@@ -89,7 +89,7 @@
     font-size: 2.5vw;
     width: 35.63vw;
     text-align: left;
-    left: -1vw;
+    left: 2vw;
     top: 106vw;
     -webkit-animation: opacity .5s forwards;
             animation: opacity .5s forwards;
@@ -112,7 +112,7 @@
   width: min(97.29vw, 1401px);
   margin: 0 auto;
 }
-@media (max-width: 425px) {
+@media (max-width: 450px) {
   .images_container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
