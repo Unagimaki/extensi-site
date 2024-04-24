@@ -34,7 +34,9 @@ export const NewsSection: FC<NewsSectionProps> = ({ news }) => {
             <div className={classes.news_line}>
               {
                 news.slice(1, -1).map(item => {
+                  
                   return(
+                    item.id !== 5 && 
                     <div key={item.id} className={classes.news_item}>
                       <div className={classes.news_title}> { item.title } </div>
                       <div className={classes.news_text}> { item.subtitle } </div>

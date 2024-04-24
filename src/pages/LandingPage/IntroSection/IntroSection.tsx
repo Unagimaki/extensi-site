@@ -18,7 +18,7 @@ export const IntroSection: FC<IntroSectionProps> = ({ classNames, menu }) => {
   return (
     <div className={cn(classes.introSection, classNames)}>
       {
-        windowWidth < 768 ? <VideoMobile/> : <VideoDesktop/>
+        windowWidth <= 1140 ? <VideoMobile/> : <VideoDesktop/>
       }
       <div className={classes.link_container}>
 

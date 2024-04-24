@@ -2,8 +2,12 @@
 
 .introSection {
   width: 100%;
-  height: 100%;
   position: relative;
+}
+@media (min-width: 425px) {
+  .introSection {
+    height: 100vh;
+  }
 }
 
 .link_container {
