@@ -31,7 +31,7 @@
 .list_container {
   padding: 57px 17px 20px 17px;
   background: linear-gradient(0deg, $color-white, #FAFB6F 100%);
-  padding-top: min(19.03vw, 274px);
+  padding-top: min(10.63vw, 153px);
 }
 
 .image_container {
@@ -66,18 +66,13 @@
 .item:not(:last-child) {
   border-bottom: min(0.07vw, 1px) solid black;
 }
-.number {
-  font-weight: $fw-regular;
-  font-size: min(1.67vw, 24px);
-
-}
 
 .number,
 .name {
   position: absolute;
 }
 .name {
-  font-size: 2.78vw;
+  font-size: min(2.78vw, 40.03px);
   font-weight: $fw-bold;
 }
 .left_center {
