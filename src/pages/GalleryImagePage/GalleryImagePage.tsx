@@ -1,7 +1,6 @@
 import { FC, useState } from 'react'
 import classes from './galleryImagePage.module.scss'
 import { teamGallery } from "data/teamGallery"
-import { ContactsSection } from 'pages/LandingPage/ContactsSection/Contacts'
 import { Feedback } from './Feedback/Feedback'
 
 interface props {
@@ -10,11 +9,9 @@ interface props {
 
 const GalleryImagePage: FC<props> = ({id}) => {
     const [showImages, setShowImages] = useState(false)
-    const [Cor, setCor] = useState<{ x: number; y: number }[]>([{x: 0, y: 0}])
-    const [imagesLocation, setImagesLocation] = useState<{ x: number; y: number }>({ x: 0, y: 0 })
+    const [Cor, setCor] = useState<{ x: number; y: number }[]>([])
 
     const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-        setImagesLocation({x: e.clientX, y: e.clientY})
         if (Cor.length < 12) {
             setCor(prevImagesLocation => [
                 ...prevImagesLocation,
@@ -24,7 +21,6 @@ const GalleryImagePage: FC<props> = ({id}) => {
     }
 
   const handleMouseEnter = () => { setShowImages(true) }
-
   const handleMouseLeave = () => { setShowImages(false), setCor([])
 }
 
@@ -41,25 +37,29 @@ const GalleryImagePage: FC<props> = ({id}) => {
                     <div className={classes.left_title}>Любовь с: <br/>EXTENSI.ONE</div>
                 </div>
 
-                <div className={classes.right}
+                <div
+                    className={classes.right}
                     onMouseMove={handleMouseMove}
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
                 >
                     {
-                        showImages ? Cor.map(item => {
+                        showImages ? Cor.map((item, index) => {
                             return(
                                 <img
+                                    key={index}
                                     src={teamGallery[Number(id-1)].src}
                                     alt="img"
                                     style={{
-                                        top: `${item.y}px`,
-                                        left: `${item.x}px`
+                                        top: `${item.y - 300}px`,
+                                        left: `${item.x}px`,
+                                        width: '25vw',
+                                        height: 'auto'
                                     }}
                                     className={classes.animate}
                                 />
                             )
-                        }) : <img src={teamGallery[Number(id-1)].src}/>
+                        }) : <img className={classes.image} src={teamGallery[Number(id-1)].src}/>
                     }
 
                 </div>

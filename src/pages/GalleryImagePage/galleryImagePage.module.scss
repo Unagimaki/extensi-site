@@ -5,45 +5,55 @@
     border-bottom: 1px solid black;
     display: flex;
     justify-content: space-between;
-    max-width: 1389px;
+    width: min(96.46vw, 1389px);
     height: min(59.44vw, 856px);
     margin: 0 auto;
     overflow: hidden;
+    position: relative;
+    font-family: $font-ObjectSans;
 }
 .container *::-webkit-scrollbar {
     display: none;
 }
 .title {
     padding-top: min(9.1vw, 131px);
-    margin-bottom: min(3.47vw, 50px);
+    padding-bottom: min(3.47vw, 50px);
     line-height: 1;
     font-size: min(9.72vw, 140px);
     font-weight: $fw-extrabold;
     letter-spacing: min(-0.69vw, 10px); 
     text-align: center;
+    background-color: #fff;
 }
 .left {
     border-right: 1px solid black;
-    padding-top: 46px;
-    padding-right: 165px;
-    padding-bottom: 67px;
+    padding-top: min(3.19vw, 46px);
+    padding-right: min(11.46vw, 165px);
+    padding-bottom: min(4.65vw, 67px);
     width: 38.13%;
 }
 .right {
     width: 60.14%;
+    padding-top: min(3.19vw, 46px);
+
 }
 .left_image {
-    margin-bottom: 26px;
+    width: 25vw;
+    margin-bottom: min(1.81vw, 26px);
 }
 .left_subtitle {
-    margin-bottom: 45px;
-    font-size: 20px;
+    margin-bottom: min(3.13vw, 45px);
+    font-size: min(1.39vw, 20px);
     color: #BABABA;
     font-weight: $fw-bold;
 }
 .left_title {
-    font-size: 52px;
+    font-size: min(3.61vw, 52px);
     font-weight: $fw-bold;
+    line-height: 1;
+}
+.image {
+    width: 25vw;
 }
 .animate {
     position: absolute;
