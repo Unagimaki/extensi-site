@@ -1,0 +1,128 @@
+@use "styles" as *;
+
+.contacts {
+  padding: min(4.17vw, 60px) 20px;
+  margin: 0 auto;
+  position: relative;
+  background: linear-gradient(to bottom, rgba(122, 16, 209, 0), rgb(235, 82, 191, 1));
+}
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.loader_container {
+  width: min(3.47vw, 50px);
+  position: absolute;
+  right: 17%;
+  top: 19%;
+}
+.loader_container img {
+  width: min(3.47vw, 50px);
+}
+.loader_done {
+  position: absolute;
+  right: 17%;
+  top: 26%;
+  animation: opacity 1s linear;
+}
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.loader_done img {
+  width: min(3.47vw, 50px);
+}
+
+.stroke_wrapper {
+  margin-bottom: min(3.43vw, 49.39px);
+  margin-left: auto;
+  margin-right: auto;
+  width: min-content;
+  white-space: nowrap;
+  position: relative;
+}
+
+.stroke_container {
+  font-size: min(2.78vw, 40px);
+  font-weight: $fw-bold;
+}
+.stroke_first {
+  margin-left: min(7.9vw, 113.76px);
+}
+.stroke_last {
+  margin-left: min(11vw, 158.4px);
+}
+
+
+.image_container {
+  position: absolute;
+  top: -289%;
+  left: 4.3%;
+  width: min(18.81vw, 270.86px);
+}
+.image {
+  width: 100%;
+}
+
+.form {
+  height: min(5.63vw, 81px);
+  width: 96%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.input {
+  width: 90%;
+  height: 100%;
+//   border: min(0.14vw, 2px) solid black;
+  padding-top: min(0.2vw, 2.88px);
+  padding-left: min(2.99vw, 43px);
+  border-radius: 200px;
+  font-family: $font-ObjectSans;
+
+}
+.input::placeholder {
+  font-family: $font-ObjectSans;
+  font-weight: $fw-regular;
+  letter-spacing: -13%;
+  font-size: min(1.39vw, 20px);
+  font-weight: $fw-bold;
+}
+.email_alert_hidden {
+  display: none;
+}
+.email_alert {
+  position: absolute;
+  color: red;
+  bottom: -40%;
+  font-size: min(1.39vw, 20px);
+}
+.button {
+  right: 0%;
+}
+
+@media (max-width: 530px) {
+  .input::placeholder {
+    font-size: 2.39vw;
+  }
+  .email_alert {
+    bottom: -50%;
+    font-size: 2vw;
+  }
+}
+@media (max-width: 500px) {
+  .input::placeholder {
+    font-size: 3.39vw;
+  }
+}
+@media (max-width: 320px) {
+  .contacts {
+    padding-bottom: 10.17vw;
+  }
+}

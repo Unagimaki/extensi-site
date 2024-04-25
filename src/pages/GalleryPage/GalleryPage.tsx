@@ -4,6 +4,7 @@ import { teamGallery } from 'data/teamGallery';
 import { teamGalleryMobile } from 'data/teamGallery-mobile';
 import { useEffect, useState } from 'react'
 import { TeamGallery } from 'shared/types/teamGallery';
+import Link from 'next/link';
 
 
 export const GalleryPage = () => {
@@ -64,12 +65,13 @@ export const GalleryPage = () => {
                 return( <img style={{width: `${calcStyle(item.id)}`}} key={item.id} src={item.src}/> )
               })
               :
-
               teamGallery.map(item => { 
                 return(
                   <div className={classes.image_container} key={item.id}>
                     {
-                      ( <img src={item.src} alt='image' className={classes.image} />)
+                      <Link href={`./gallery/${item.id}`}>
+                        <img src={item.src} alt='image' className={classes.image} />
+                      </Link>
                     }
                   </div>
                 ) 

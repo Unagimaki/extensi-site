@@ -2,13 +2,12 @@ import React, { useState } from 'react'
 
 import { Button } from 'components/Button/Button'
 
-import classes from './contacts.module.scss'
+import classes from './feedback.module.scss'
 
 import { useForm } from 'react-hook-form'
 
 import image from '../../../../public/images/contact_label_pic.png'
 import axios from 'axios'
-import InputLoader from './InputLoader/InputLoader'
 import { MyButton } from 'components/myButton/myButton'
 
 interface userForm {
@@ -16,7 +15,7 @@ interface userForm {
   message: string 
 }
 
-export const ContactsSection: React.FC = () => {
+export const Feedback: React.FC = () => {
   const { handleSubmit } = useForm<FormData>()
   const [value, setValue] = useState<string>("")
   const [isSend, setIsSend] = useState<boolean>(false)
@@ -54,6 +53,7 @@ export const ContactsSection: React.FC = () => {
   
   return (
     <section className={classes.contacts}>
+        <div className={classes.container}>
 
       <div className={classes.stroke_wrapper}>
         <div className={classes.stroke_container}>
@@ -81,7 +81,7 @@ export const ContactsSection: React.FC = () => {
           isLoaderVisible && !isSend ?
 
           <div className={classes.loader_container}>
-            <InputLoader/>
+            {/* <InputLoader/> */}
           </div> : isLoaderVisible && isSend ?
           <div className={classes.loader_done}>
             <img src="./images/input-loader/done.svg" alt="done" />
@@ -89,7 +89,7 @@ export const ContactsSection: React.FC = () => {
         }
         <MyButton type='submit' withArrowIcon classNames={classes.button}/>
       </form>
-
+      </div>
     </section>
   )
 }
