@@ -51,8 +51,8 @@ const GalleryImagePage: FC<props> = ({id}) => {
                                     src={teamGallery[Number(id-1)].src}
                                     alt="img"
                                     style={{
-                                        top: `${item.y - 300}px`,
-                                        left: `${item.x}px`,
+                                        top: `${item.y}px`,
+                                        left: `${item.x - 300}px`,
                                         width: '25vw',
                                         height: 'auto'
                                     }}

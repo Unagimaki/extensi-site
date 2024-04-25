@@ -62,7 +62,11 @@ export const GalleryPage = () => {
             {
               windowWidth ? 
               mobileArr.map((item: TeamGallery, index) => {               
-                return( <img style={{width: `${calcStyle(item.id)}`}} key={item.id} src={item.src}/> )
+                return(
+                  <Link href={`./gallery/${item.id}`}>
+                    <img style={{width: `${calcStyle(item.id)}`}} key={item.id} src={item.src}/>
+                  </Link>
+                )
               })
               :
               teamGallery.map(item => { 
