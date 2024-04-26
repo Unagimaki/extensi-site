@@ -2,6 +2,7 @@ import { FC, useState } from 'react'
 import classes from './galleryImagePage.module.scss'
 import { teamGallery } from "data/teamGallery"
 import { Feedback } from './Feedback/Feedback'
+import Link from 'next/link'
 
 interface props {
     id: any
@@ -25,7 +26,9 @@ const GalleryImagePage: FC<props> = ({id}) => {
 }
 
     return(
-        <div className={classes.wrapper}>
+        <section className={classes.wrapper}>
+            <div className={classes.section_container}>
+
 
             <h1 className={classes.title}>Галерея</h1>
 
@@ -67,8 +70,33 @@ const GalleryImagePage: FC<props> = ({id}) => {
 
                 </div>
             </div>
+            </div>
             <Feedback/>
-        </div>
+            <div className={classes.images_wrapper}>
+                <div className={classes.images_container}>
+
+                <div className={classes.text}>Больше нас:</div>
+                <div className={classes.images_list}>
+                    {
+                        teamGallery.map(item => { 
+                        return(
+                            item.id > 8 &&
+                            <div className={classes.image_container} key={item.id}>
+                            {
+                                <Link key={item.id} href={`./gallery/${item.id}`}>
+                                    <img src={item.src} alt='image' className={classes.img}/>
+                                </Link>
+                            }
+                            </div>
+                        ) 
+                        })
+                    }
+                </div>
+                </div>
+
+            </div>
+
+        </section>
     )
 }
 

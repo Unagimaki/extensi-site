@@ -1,5 +1,12 @@
 @use 'styles' as *;
+.wrapper {
+    width: 100vw;
 
+}
+.section_container {
+    max-width: 1440px;
+    margin: 0 auto;
+}
 .container {
     border-top: 1px solid black;
     border-bottom: 1px solid black;
@@ -9,7 +16,7 @@
     height: min(59.44vw, 856px);
     margin: 0 auto;
     overflow: hidden;
-    // position: relative;
+    position: relative;
     font-family: $font-ObjectSans;
 }
 .container *::-webkit-scrollbar {
@@ -57,6 +64,73 @@
     width: 25vw;
     animation: opacity .3s forwards;
 }
+.images_wrapper {
+    background-color: #F9FB6F;
+    padding-bottom: min(5vw, 72px);
+    padding-top: min(2.71vw, 39px);
+    display: flex;
+    flex-direction: column;
+}
+.text {
+    white-space: nowrap;
+    text-align: left;
+    margin-bottom: min(2.01vw, 29px);
+    font-size: min(1.39vw, 20px);
+    font-weight: $fw-bold;
+}
+.images_container {
+    margin: 0 auto;
+    width: min(97.29vw, 1401px);
+
+}
+.images_list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    gap: min(0.56vw, 8px);
+}
+.image_container {
+    height: min(16.13vw, 232.2px);
+    width: min(11.67vw, 168px);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  
+}
+.img {
+    width: min(11.67vw, 168px);
+}
+.image_container:first-child .img {
+    height: 17.71vw;
+}
+.image_container:nth-child(2) .img {
+    height: min(11.6vw, 167px);
+}
+.image_container:nth-child(3) .img {
+    height: min(8.19vw, 118px);
+}
+.image_container:nth-child(4) .img {
+    height: min(13.85vw, 199.5px);
+}
+.image_container:nth-child(5) .img {
+    height: min(8.19vw, 118px);
+}
+.image_container:nth-child(6) .img {
+    height: min(17.72vw, 255.2px);
+}
+.image_container:nth-child(7) .img {
+    height: min(9.86vw, 142px);
+}
+.image_container:nth-child(8) .img {
+    height: min(17.29vw, 249px);
+}
+
 @keyframes opacity {
     0% {
         opacity: 0;

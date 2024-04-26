@@ -9,6 +9,7 @@ import { useForm } from 'react-hook-form'
 import image from '../../../../public/images/contact_label_pic.png'
 import axios from 'axios'
 import { MyButton } from 'components/myButton/myButton'
+import InputLoader from './InputLoader/InputLoader'
 
 interface userForm {
   email: string 
@@ -81,10 +82,10 @@ export const Feedback: React.FC = () => {
           isLoaderVisible && !isSend ?
 
           <div className={classes.loader_container}>
-            {/* <InputLoader/> */}
+            <InputLoader/>
           </div> : isLoaderVisible && isSend ?
           <div className={classes.loader_done}>
-            <img src="./images/input-loader/done.svg" alt="done" />
+            <img src="../images/input-loader/done.svg" alt="done" />
           </div> : null
         }
         <MyButton type='submit' withArrowIcon classNames={classes.button}/>

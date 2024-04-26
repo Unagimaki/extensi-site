@@ -26,7 +26,10 @@
 @media (max-width: 425px) {
     .icon { width: 70%; }
 }
-@media (max-width: 320px) {
-    .button { height: 7.14vw; }
-    .icon { width: 80%; }
+
+@media (max-width: 375px) {
+    .button {
+        width: 9.25vw;
+        height: 9.25vw;
+    }
 }
