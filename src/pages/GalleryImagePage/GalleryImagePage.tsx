@@ -52,7 +52,7 @@ const GalleryImagePage: FC<props> = ({id}) => {
                                     alt="img"
                                     style={{
                                         top: `${item.y}px`,
-                                        left: `${item.x - 300}px`,
+                                        left: `${item.x}px`,
                                         width: '25vw',
                                         height: 'auto'
                                     }}

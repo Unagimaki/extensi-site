@@ -5,6 +5,7 @@ import {
   Suspense,
   useEffect,
   useRef,
+  useState,
 } from 'react'
 import cn from 'classnames'
 
@@ -15,6 +16,8 @@ import CameraRig from './ThreeDElements/CameraRig'
 import ThreeDImages from './ThreeDElements/ThreeDImages'
 import { useWindowDimensions } from 'shared/hooks/useWindowDimensions'
 import { MyButton } from 'components/myButton/myButton'
+import { useAppDispatch, useAppSelector } from 'shared/hooks/redux'
+import { setModelsLoaded } from 'store/slices/loading'
 
 export interface AboutSectionProps {
   classNames?: string
@@ -40,6 +43,7 @@ export const AboutSection: FC<AboutSectionProps> = ({
   const { width: windowWidth } = useWindowDimensions()
   const sectionRef = useRef<HTMLElement>()
   const changeVisible = () => { setIsDescriptionHidden(!isDescriptionHidden) }
+  const dispatch = useAppDispatch()
 
   return (
     <div className={cn(s.aboutSection, classNames)}>
@@ -47,11 +51,25 @@ export const AboutSection: FC<AboutSectionProps> = ({
         <Canvas
           camera={{ position: [0, 0, 0], fov: 100 }}
           className={s.canvas}
-          gl={{ preserveDrawingBuffer: false }}
+          gl={{ preserveDrawingBuffer: true }}
           eventSource={sectionRef?.current}
           eventPrefix='client'
         >
-          <Suspense>
+          <Suspense
+            fallback={
+              <CanvasLoader
+                onChangeProgress={progress => {
+                  console.log(progress);
+                  
+                  if (progress >= 99) {
+                    console.log('loaded');
+                    
+                    dispatch(setModelsLoaded(true))
+                  }
+                }}
+              />
+            }
+          >
             <CameraRig targetPosition={[-1, 0, 2]}>
               <ThreeDImages
                 gltfPath='3d_about_pic1.glb'
@@ -93,12 +111,7 @@ export const AboutSection: FC<AboutSectionProps> = ({
           <div className={s.stroke}>диджитал</div>
           <div className={s.stroke}>решения</div>
         </div>
-          {/* <Button
-            variant='black'
-            classNames={s.button}
-            onClick={changeVisible}
-          /> */}
-            <MyButton classNames={s.button} onClick={changeVisible}/>
+          <MyButton classNames={s.button} onClick={changeVisible}/>
       </div>
     </div>
   )
