@@ -1,7 +1,11 @@
 @use 'styles' as *;
+
 .wrapper {
     width: 100vw;
-
+    overflow: hidden;
+}
+.wrapper::-webkit-scrollbar {
+    display: none;
 }
 .section_container {
     max-width: 1440px;
@@ -107,7 +111,7 @@
     width: min(11.67vw, 168px);
 }
 .image_container:first-child .img {
-    height: 17.71vw;
+    height: min(17.71vw, 255.02px);
 }
 .image_container:nth-child(2) .img {
     height: min(11.6vw, 167px);

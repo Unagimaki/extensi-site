@@ -1,7 +1,10 @@
 @use "styles" as *;
 
 .contacts {
-  padding: min(4.17vw, 60px) 20px;
+  padding-top: min(10.14vw, 146px);
+  padding-bottom: min(4.17vw, 60px);
+  padding-right: 20px;
+  padding-left: 20px;
   margin: 0 auto;
   position: relative;
   background: linear-gradient(to bottom, rgba(122, 16, 209, 0), rgb(235, 82, 191, 1));

@@ -26,7 +26,8 @@
   flex-direction: column;
   width: min(46vw, 662.4px);
   height: min(22.85vw, 329px);
-  padding: min(5.21vw, 75px) min(2.22vw, 30px);
+  justify-content: center;
+  padding: 0 min(2.22vw, 30px);
 }
 .news_item:not(:last-child) {
   border-right: min(0.07vw, 1px) solid black;
