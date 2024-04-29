@@ -73,7 +73,7 @@ export const GalleryPage = () => {
                 return(
                   <div className={classes.image_container} key={item.id}>
                     {
-                      <Link key={item.id} href={`./gallery/${item.id}`}>
+                      <Link key={item.id} href={!windowWidth && `./gallery/${item.id}`}>
                         <img src={item.src} alt='image' className={classes.image} />
                       </Link>
                     }
