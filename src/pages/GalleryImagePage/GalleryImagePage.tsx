@@ -1,16 +1,33 @@
-import { FC, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 import classes from './galleryImagePage.module.scss'
 import { teamGallery } from "data/teamGallery"
 import { Feedback } from './Feedback/Feedback'
 import Link from 'next/link'
 
-interface props {
-    id: any
-}
+interface props { id: any }
 
 const GalleryImagePage: FC<props> = ({id}) => {
+    const [windowWidth, setWindowWidth] = useState<number>(0);
     const [showImages, setShowImages] = useState(false)
     const [Cor, setCor] = useState<{ x: number; y: number }[]>([])
+
+    useEffect(() => {
+        setWindowWidth(window.innerWidth)
+        const handleResize = () => { setWindowWidth(window.innerWidth), console.log(windowWidth);
+         }
+        window.addEventListener('resize', handleResize)
+        return () => { window.removeEventListener('resize', handleResize) }
+    }, [windowWidth]);
+
+    const calcPositionX = () => {
+        let x = 0
+        if (windowWidth >= 1920) {
+            return x - 150
+        } else if (windowWidth >= 1440 && x < 1920) {
+            return x - 100
+        }      
+        return x
+    }
 
     const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         if (Cor.length < 12) {
@@ -22,8 +39,9 @@ const GalleryImagePage: FC<props> = ({id}) => {
     }
 
   const handleMouseEnter = () => { setShowImages(true) }
-  const handleMouseLeave = () => { setShowImages(false), setCor([])
-}
+  const handleMouseLeave = () => { setShowImages(false), setCor([]) }
+
+
 
     return(
         <section className={classes.wrapper}>

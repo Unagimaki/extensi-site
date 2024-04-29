@@ -58,10 +58,6 @@ export const NewsSection: FC<NewsSectionProps> = ({ news }) => {
 
         </div>
       </div>
-      {/* <div className={classes.button_container}>
-        <Button variant="white" withArrowIcon={true} onClick={() => router.push('./news')}/>
-      </div> */}
-
     </section>
   );
 };

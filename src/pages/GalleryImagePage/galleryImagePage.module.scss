@@ -16,7 +16,7 @@
     height: min(59.44vw, 856px);
     margin: 0 auto;
     overflow: hidden;
-    position: relative;
+    // position: relative;
     font-family: $font-ObjectSans;
 }
 .container *::-webkit-scrollbar {
@@ -87,7 +87,7 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    position: relative;
+    // position: relative;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     -webkit-box-align: end;

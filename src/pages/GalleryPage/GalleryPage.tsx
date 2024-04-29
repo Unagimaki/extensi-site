@@ -81,7 +81,9 @@ export const GalleryPage = () => {
                 ) 
               })
             }
-            <MyButton classNames={classes.button} onClick={changeCurrentIndex}/>
+            {
+              windowWidth && <MyButton classNames={classes.button} onClick={changeCurrentIndex}/>
+            }
           </div>
       </div>
     </div>
