@@ -10,12 +10,16 @@ export const TextSection: FC<props> = ({state}) => {
         <section className={!state ?  classes.wrapper : classes.wrapper_hidden}>
             <div className={!state ?  classes.container : classes.container_hidden}>
 
-                <div className={classes.first_paragraph}>
-                    Мы - бутиковое агентство и студия разработки, объединяющие <br/> 
-                    экспертизы для реализации ярких, но эффективных проектов. <br/> Мы создаем продукты и консультируем, как разрабатывать и <br/> монетизировать приложения, боты, сервисы, медиа проекты. <br/> Мы разрабатываем долгосрочные стратегии продвижения и  <br/>
+                <div className={classes.first_paragraph_container}>
+                    <div className={classes.text}>
+                        Мы - бутиковое агентство и студия разработки, объединяющие <br/> 
+                        экспертизы для реализации ярких, но эффективных проектов. <br/> Мы создаем продукты и консультируем, как разрабатывать и <br/> монетизировать приложения, боты, сервисы, медиа проекты. <br/> Мы разрабатываем долгосрочные стратегии продвижения и  <br/> 
+                    </div>
                 </div>
-                <div className={classes.first_paragraph}>
-                    эффективно управляем маркетинговыми
+                <div className={classes.second_paragraph_container}>
+                    <div>
+                        эффективно управляем маркетинговыми
+                    </div>
                 </div> 
                 <div className={classes.last_paragraph}>
                     бюджетами брендов: определяем цели и задачи, тактику, коммуникационную платформу, собираем команду, анализируем результаты и бизнес показатели.

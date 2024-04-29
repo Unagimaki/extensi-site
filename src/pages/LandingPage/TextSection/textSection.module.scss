@@ -56,12 +56,21 @@
     opacity: 0;
     animation: text .5s forwards;
 }
-.first_paragraph {
-    padding-left: min(27.5vw, 396px);
+.first_paragraph_container {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
     text-align: justify;
+    text-align-last: justify;
 }
+.second_paragraph_container {
+    width: min(60.97vw, 878px);
+    display: flex;
+    justify-content: flex-end;
+}
+
 .last_paragraph {
-    width: min(57.85vw, 833px);
+    width: min(60.97vw, 878px);
 }
 
 @keyframes container {
