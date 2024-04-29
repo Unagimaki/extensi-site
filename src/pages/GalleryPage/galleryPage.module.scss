@@ -6,7 +6,6 @@
   flex-direction: column;
   padding-top: min(9.1vw, 131px);
   position: relative;
-  min-height: 100vh;
 }
 
 @media (max-width: 425px) {
@@ -26,7 +25,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  // position: relative;
+  position: relative;
 }
 .container {
   max-width: 1400px;
@@ -34,7 +33,7 @@
   padding-bottom: min(25.28vw, 364px);
 }
 .title {
-  // position: relative;
+  position: relative;
   margin-bottom: min(3.47vw, 50px);
   line-height: 1;
   font-size: min(9.72vw, 140px);
@@ -93,7 +92,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  // position: relative;
+  position: relative;
   flex-wrap: wrap;
   align-items: flex-end;
   gap: min(0.56vw, 8px);
