@@ -67,10 +67,19 @@
     width: min(60.97vw, 878px);
     display: flex;
     justify-content: flex-end;
+    
 }
 
-.last_paragraph {
+.last_paragraph_container {
+    display: flex;
+    justify-content: flex-end;
     width: min(60.97vw, 878px);
+    text-align: justify;
+    text-align-last: justify;
+
+}
+.last_paragraph_container div {
+    width: min(55.9vw, 805px);
 }
 
 @keyframes container {
