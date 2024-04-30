@@ -1,7 +1,7 @@
 import { useAppDispatch } from 'shared/hooks/redux';
 import classes from './videoDesktop.module.scss'
 import { useRef } from 'react';
-import { setShow, setVideoLoaded } from "store/slices/loading";
+import { setShow } from "store/slices/loading";
 
 const VideoDesktop = () => {
   const dispatch = useAppDispatch();
@@ -17,9 +17,8 @@ const VideoDesktop = () => {
       controls={false}
       playsInline
       onCanPlayThrough={() => {
-        console.log("can play");
         videoRef.current?.play();
-        dispatch(setVideoLoaded(true));
+        dispatch(setShow(false));
       }}
     >
         <source src='/videos/introsectionvid_desktop.mp4' type="video/mp4"/>

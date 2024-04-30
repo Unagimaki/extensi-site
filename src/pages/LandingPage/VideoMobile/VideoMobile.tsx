@@ -18,7 +18,6 @@ const VideoMobile = () => {
       controls={false}
       playsInline
       onCanPlayThrough={() => {
-        console.log("can play");
         videoRef.current?.play();
         dispatch(setShow(false));
       }}

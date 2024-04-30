@@ -71,6 +71,11 @@
         justify-content: center;
     }
 }
+@media (max-width: 320px) {
+    .container {
+        font-size: 3vw;
+    }
+}
 
 .container div {
     opacity: 0;
