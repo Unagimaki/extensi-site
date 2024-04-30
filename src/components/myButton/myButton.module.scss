@@ -7,9 +7,15 @@
     width: min(6.25vw, 90px);
     border: none;
     position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     &:hover { opacity: .7; }
 }
 .decor {
