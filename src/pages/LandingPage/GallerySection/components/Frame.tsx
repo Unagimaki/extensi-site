@@ -12,6 +12,8 @@ import { extend, useFrame } from "@react-three/fiber";
 
 import { easing } from "maath";
 import { getPositionAndRotation, splitArray } from "./galleryHelpers";
+import { log } from "console";
+import { is } from "@react-three/fiber/dist/declarations/src/core/utils";
 
 interface FrameProps {
   url: string[];
@@ -45,6 +47,7 @@ const Frame: FC<FrameProps> = memo(
     ]);
     const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
     const [clicked, setClicked] = useState(false);
+    const [isCurrent, setIsCurrent] = useState<boolean>(false)
     const [rnd] = useState(() => Math.random());
     const [defaultRandom] = useState<number>(
       defaults[Math.floor(Math.random() * defaults.length)]
@@ -54,14 +57,14 @@ const Frame: FC<FrameProps> = memo(
 
     const name = getUuid(`${gallery?.[index]?.id}`);
     const isActive = galleryDatas.id === name;
-
+    
     const rotationFunc = useCallback(() => {
       if (!isActive || !clicked) {
         return setRotation(() => [0, 0, 0]);
       }
       if (clicked && rotation[1] > -2.99) {
         setRotation(() => [0, rotation[1] - 0.08, 0]);
-      }
+      }     
     }, [clicked, isActive, rotation]);
 
     useFrame((state, dt) => {
@@ -73,10 +76,9 @@ const Frame: FC<FrameProps> = memo(
     });
 
     useEffect(() => {
-      setClicked(true)      
       const func = () => {
-        if (!isActive) {
-          return setClicked(() => false);
+        if (!isActive) {  
+          return setClicked(() => true), setIsCurrent(true)
         }
         return setRotation(() => [0, 0, 0]);
       };
@@ -99,7 +101,7 @@ const Frame: FC<FrameProps> = memo(
       >
         <mesh
           name={name}
-          onPointerEnter={(e) => {
+          onPointerEnter={(e) => {           
             e.stopPropagation();
             if (isActive) {
               if (currentImageIndex !== url.length - 1) {
@@ -108,12 +110,15 @@ const Frame: FC<FrameProps> = memo(
               return setCurrentImageIndex(() => 0);
             }
           }}
-          onPointerDown={() => {
+          onPointerDown={(e) => {  
+
             if (isActive) {
-              setClicked(() => true);
+              setClicked(() => false)
             }
           }}
           onPointerOut={() => {
+            console.log('out');
+            
             setCurrentImageIndex(() => 0);
             if (!isActive) {
               setClicked(() => false);
