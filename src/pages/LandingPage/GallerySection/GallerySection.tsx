@@ -1,4 +1,4 @@
-import { FC, Suspense, memo, useMemo } from "react";
+import { FC, Suspense, memo, useEffect, useMemo, useState } from "react";
 
 import * as THREE from "three";
 import { Canvas, useFrame } from "@react-three/fiber";
@@ -36,6 +36,20 @@ export const GallerySection: FC<GallerySectionProps> = memo(({ images }) => {
     threshold: 0.5,
   });
 
+  const [loaderActive, setLoaderActive] = useState(true);
+
+  useEffect(() => {
+    if (inView) {
+      const timeoutId = setTimeout(() => {
+        if (loaderActive) {
+          setLoaderActive(false);
+        }
+      }, 2500);
+
+      return () => clearTimeout(timeoutId);
+    }
+  }, [inView, loaderActive]);
+
   return (
     <div id="gallerySection" className={s.gallerySection} ref={ref}>
       <div className={s.gallery}>
@@ -48,7 +62,7 @@ export const GallerySection: FC<GallerySectionProps> = memo(({ images }) => {
             gl.setClearColor(new THREE.Color("#020207"));
           }}
         >
-          <Suspense fallback={<CanvasLoader />}>
+          <Suspense fallback={loaderActive && <CanvasLoader />}>
             <Text
               fontSize={1}
               color={"#333333"}
