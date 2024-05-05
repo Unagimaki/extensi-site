@@ -11,11 +11,11 @@ export const Artists: FC<ArtistsProps> = ({ artists }) => {
     let className = classes.name;
     index === 0 || index === 5 || index === 8 ?
     (className += ' ' + classes.left_center) :
-    index === 1 || index === 4 || index === 7 || index === 9 ?
+    index === 1 || index === 4 || index === 7 ?
     (className += ' ' + classes.left) :
     index === 2 || index === 10?
     (className += ' ' + classes.right_name) :
-    index === 3 || index === 6 ?
+    index === 3 || index === 6 || index === 9 ?
     (className += ' ' + classes.right_center) :
     className;
     return className;

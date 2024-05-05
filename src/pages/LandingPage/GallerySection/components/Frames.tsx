@@ -53,7 +53,8 @@ const Frames: FC<FramesProps> = memo(
         onClick={(e) => (
           e.stopPropagation(), handleGalleryDatas(e.object.name)
         )}
-        onPointerMissed={() => handleGalleryDatas("/")}
+        onPointerMissed={() => {handleGalleryDatas("/"), console.log('missed')} 
+        }
       >
         {gallery?.map(({ id, images, backImage, ...image }: Gallery, index: number) => (
           <Frame

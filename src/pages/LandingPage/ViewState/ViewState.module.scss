@@ -1,0 +1,14 @@
+.container {
+    position: fixed;
+    background-color: antiquewhite;
+    list-style-type: none;
+    top: 0;
+    left: 0;
+    padding: 30px;
+}
+.li {
+  font-size: 20px;  
+}
+.li:not(:last-child) {
+    margin-bottom: 10px;
+}
