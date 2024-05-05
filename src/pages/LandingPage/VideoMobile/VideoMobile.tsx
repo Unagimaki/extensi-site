@@ -17,6 +17,7 @@ const VideoMobile = () => {
       loop
       controls={false}
       playsInline
+      ref={videoRef}
       onCanPlayThrough={() => {
         videoRef.current?.play();
         dispatch(setShow(false));

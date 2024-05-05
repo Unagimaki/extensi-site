@@ -77,7 +77,7 @@ const Frame: FC<FrameProps> = memo(
     useEffect(() => {    
       const func = () => {
         if (!isActive) {  
-          return setClicked(() => true)
+          return setClicked(() => false)
         }
         return setRotation(() => [0, 0, 0]);
       };
@@ -109,18 +109,16 @@ const Frame: FC<FrameProps> = memo(
               return setCurrentImageIndex(() => 0);
             }
           }}
-          onPointerDown={(e) => {  
-            console.log('click');
-            
+          onPointerDown={(e) => {             
             if (isActive) {
-              setClicked(() => false)
+              setClicked(() => true)
             }
           }}
           onPointerOut={() => {
             setCurrentImageIndex(() => 0);
-            // if (!isActive) {
-            //   setClicked(() => false);
-            // }
+            if (!isActive) {
+              setClicked(() => false);
+            }
           }}
           scale={[0.7, GOLDENRATIO, 0.05]}
           // scale={[0.7, 2, 0.05]}
