@@ -74,7 +74,10 @@ const Frame: FC<FrameProps> = memo(
       }     
     });
 
-    useEffect(() => {    
+    useEffect(() => {  
+      if (isActive) {
+        setTimeout(() => {setClicked(true)}, 3000)
+      }  
       const func = () => {
         if (!isActive) {  
           return setClicked(() => false)
@@ -111,12 +114,13 @@ const Frame: FC<FrameProps> = memo(
           }}
           onPointerDown={(e) => {             
             if (isActive) {
+              console.log('work');
               setClicked(() => true)
             }
           }}
           onPointerOut={() => {
             setCurrentImageIndex(() => 0);
-            if (!isActive) {
+            if (!isActive) {             
               setClicked(() => false);
             }
           }}
