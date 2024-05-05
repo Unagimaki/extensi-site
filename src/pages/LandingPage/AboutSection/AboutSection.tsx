@@ -61,10 +61,9 @@ export const AboutSection: FC<AboutSectionProps> = ({
                 onChangeProgress={progress => {
                   console.log(progress);
                   
-                  if (progress >= 99) {
+                  if (progress == 100) {
                     console.log('loaded');
-                    
-                    dispatch(setModelsLoaded(true))
+                    setTimeout(() => {dispatch(setModelsLoaded(true))}, 1000)
                   }
                 }}
               />
@@ -94,7 +93,7 @@ export const AboutSection: FC<AboutSectionProps> = ({
               />
             </CameraRig>
             <Environment preset='city' />
-            <Preload all />
+            <Preload all={true}/>
           </Suspense>
         </Canvas>
       </div>

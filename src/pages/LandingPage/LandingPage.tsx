@@ -19,11 +19,11 @@ import TeamGallerySection from "./TeamGallerySection/TeamGallerySection";
 
 export const LandingPage: FC = () => {
   const [isDescriptionHidden, setIsDescriptionHidden] = useState<boolean>(true);
-  const { show } = useAppSelector(state => state.loading);
+  const { models } = useAppSelector(state => state.loading);
 
   return (
     <div className={s.landingPage}>
-      { show ? <LoadingOverlay/> : null}
+      { !models && <LoadingOverlay/> }
 
       <IntroSection menu={menu}/>
       <Element name='about'>
