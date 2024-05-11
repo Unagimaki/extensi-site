@@ -60,13 +60,10 @@ export const AboutSection: FC<AboutSectionProps> = ({
               <CanvasLoader
                 onChangeProgress={progress => {
                   console.log(progress);
-                  // setTimeout(() => {dispatch(setModelsLoaded(true)), alert('loaded timeout')}, 9000)
-
                   if (progress >= 99) {
                     console.log('loaded');
-                    
-                    setTimeout(() => {dispatch(setModelsLoaded(true))}, 2000) 
-                    alert('loaded')
+                    // задержка для загрузки моделек для мобильных устройств
+                    setTimeout(() => { dispatch(setModelsLoaded(true)) }, 2000) 
                   }
                 }}
               />
