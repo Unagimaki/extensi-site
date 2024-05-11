@@ -66,6 +66,7 @@ export const AboutSection: FC<AboutSectionProps> = ({
                     console.log('loaded');
                     
                     dispatch(setModelsLoaded(true))
+                    alert('loaded')
                   }
                 }}
               />
