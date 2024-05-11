@@ -65,7 +65,7 @@ export const AboutSection: FC<AboutSectionProps> = ({
                   if (progress >= 99) {
                     console.log('loaded');
                     
-                    dispatch(setModelsLoaded(true))
+                    setTimeout(() => {dispatch(setModelsLoaded(true))}, 2000) 
                     alert('loaded')
                   }
                 }}
