@@ -34,7 +34,7 @@ const Frames: FC<FramesProps> = memo(
       if (clicked.current) {
         clicked.current.parent.updateWorldMatrix(true, true);
         clicked.current.parent.localToWorld(
-          (p as any).set(0, GOLDENRATIO / 2, 1.25)
+          (p as any).set(0, GOLDENRATIO / 2, 1)
         );
         clicked.current.parent.getWorldQuaternion(q);
       } else {

@@ -3,18 +3,15 @@
 import * as THREE from "three";
 import { FC, memo, useCallback, useEffect, useRef, useState } from "react";
 
-import { Center, Image, Text } from "@react-three/drei";
+import { Image } from "@react-three/drei";
 import { useAppSelector } from "shared/hooks/redux";
 import { Gallery } from "shared/types/gallery";
 
 import getUuid from "uuid-by-string";
-import { extend, useFrame } from "@react-three/fiber";
+import { useFrame } from "@react-three/fiber";
 
 import { easing } from "maath";
 import { getPositionAndRotation, splitArray } from "./galleryHelpers";
-import { log } from "console";
-import { is } from "@react-three/fiber/dist/declarations/src/core/utils";
-import ViewState from "pages/LandingPage/ViewState/ViewState";
 
 interface FrameProps {
   url: string[];
@@ -114,7 +111,6 @@ const Frame: FC<FrameProps> = memo(
           }}
           onPointerDown={(e) => {             
             if (isActive) {
-              console.log('work');
               setClicked(() => true)
             }
           }}
@@ -154,7 +150,6 @@ const Frame: FC<FrameProps> = memo(
             raycast={() => null}
             scale={[2.3, 1, 1]}
             position={[0, 0, 0.2]}
-            
           >
           <Image
             ref={image}

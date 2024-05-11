@@ -61,7 +61,7 @@ export const AboutSection: FC<AboutSectionProps> = ({
                 onChangeProgress={progress => {
                   console.log(progress);
                   
-                  if (progress == 100) {
+                  if (progress > 95) {
                     console.log('loaded');
                     setTimeout(() => {dispatch(setModelsLoaded(true))}, 1000)
                   }
