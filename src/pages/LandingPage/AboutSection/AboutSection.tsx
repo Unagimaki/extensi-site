@@ -63,7 +63,7 @@ export const AboutSection: FC<AboutSectionProps> = ({
                   if (progress >= 99) {
                     console.log('loaded');
                     // задержка для загрузки моделек для мобильных устройств
-                    setTimeout(() => { dispatch(setModelsLoaded(true)) }, 2000) 
+                    setTimeout(() => { dispatch(setModelsLoaded(true)) }, 1000) 
                   }
                 }}
               />
