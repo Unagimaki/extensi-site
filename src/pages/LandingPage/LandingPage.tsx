@@ -18,7 +18,7 @@ import { useAppSelector } from "shared/hooks/redux";
 import TeamGallerySection from "./TeamGallerySection/TeamGallerySection";
 
 export const LandingPage: FC = () => {
-  const [isDescriptionHidden, setIsDescriptionHidden] = useState<boolean>(true);
+  const [isDescriptionHidden, setIsDescriptionHidden] = useState<boolean>(false);
   const { models } = useAppSelector(state => state.loading);
 
   return (

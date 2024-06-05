@@ -60,10 +60,11 @@ export const AboutSection: FC<AboutSectionProps> = ({
               <CanvasLoader
                 onChangeProgress={progress => {
                   console.log(progress);
+                  setTimeout(() => {dispatch(setModelsLoaded(true)), console.log('interrupt')}, 5000)
                   if (progress >= 99) {
                     console.log('loaded');
                     // задержка для загрузки моделек для мобильных устройств
-                    setTimeout(() => { dispatch(setModelsLoaded(true)) }, 1000) 
+                    setTimeout(() => { dispatch(setModelsLoaded(true)) }, 500) 
                   }
                 }}
               />
@@ -110,7 +111,7 @@ export const AboutSection: FC<AboutSectionProps> = ({
           <div className={s.stroke}>диджитал</div>
           <div className={s.stroke}>решения</div>
         </div>
-          <MyButton classNames={s.button} onClick={changeVisible}/>
+          {/* <MyButton classNames={s.button} onClick={changeVisible}/> */}
       </div>
     </div>
   )
